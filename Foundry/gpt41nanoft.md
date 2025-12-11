@@ -1,4 +1,4 @@
-# Azure Open AI GPT 4.1 Nano Fine Tuning
+# Azure Open AI GPT 4.1 Nano Fine Tuning - GUI
 
 ## Introduction
 
@@ -10,6 +10,7 @@
 - My samples has about 350+ rows.
 - Have a separate validation set.
 - Data set in messages format, like role, content pairs.
+- No Code required, all steps are through GUI.
 
 ## Prerequisites
 
