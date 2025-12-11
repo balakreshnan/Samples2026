@@ -27,7 +27,7 @@
 
 - Prepare your dataset in JSONL format with the required structure.
 - Have the jsonl file ready in your local system.
-- Go to ai.azure.com
+- Go to https://ai.azure.com
 - Navigate to the "Fine-tuning" section.
 - Click Fine tune a model.
 
