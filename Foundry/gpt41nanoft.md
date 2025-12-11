@@ -45,22 +45,66 @@
 - Click on Submit to start the fine-tuning job.
 - Wait for to complete the fine-tuning process.
 
-![info](https://github.com/balakreshnan/Samples2026/blob/main/Foundry/images/gpt41nano-ft-3.jpg 'fine tuning model')
+![info](https://github.com/balakreshnan/Samples2026/blob/main/Foundry/images/gpt41nano-ft-7.jpg 'fine tuning model')
 
 - Check the status of the fine-tuning job in the Fine-tuning section.
 - Check the metrics and logs for the fine-tuning job.
 
-![info](https://github.com/balakreshnan/Samples2026/blob/main/Foundry/images/gpt41nano-ft-4.jpg 'fine tuning model')
+![info](https://github.com/balakreshnan/Samples2026/blob/main/Foundry/images/gpt41nano-ft-8.jpg 'fine tuning model')
 
 - Once the fine-tuning is complete, deploy the fine-tuned model.
 
-![info](https://github.com/balakreshnan/Samples2026/blob/main/Foundry/images/gpt41nano-ft-5.jpg 'fine tuning model')
+![info](https://github.com/balakreshnan/Samples2026/blob/main/Foundry/images/gpt41nano-ft-9.jpg 'fine tuning model')
 
 - Check the checkpoints
 
-![info](https://github.com/balakreshnan/Samples2026/blob/main/Foundry/images/gpt41nano-ft-6.jpg 'fine tuning model')
+![info](https://github.com/balakreshnan/Samples2026/blob/main/Foundry/images/gpt41nano-ft-10.jpg 'fine tuning model')
 
 - Complete the deployment steps by selecting the appropriate options.
+- Now select the model and deploy it to an endpoint.
+
+![info](https://github.com/balakreshnan/Samples2026/blob/main/Foundry/images/gpt41nano-ft-11.jpg 'fine tuning model')
+
+- Status when creating
+
+![info](https://github.com/balakreshnan/Samples2026/blob/main/Foundry/images/gpt41nano-ft-12.jpg 'fine tuning model')
+
+- Once completed, you can use the fine-tuned model via the endpoint.
+
+![info](https://github.com/balakreshnan/Samples2026/blob/main/Foundry/images/gpt41nano-ft-13.jpg 'fine tuning model')
+
+### Evaluation
+
+- Create a ground truth dataset to evaluate the fine-tuned model.
+- Go to Evaluation section in Foundry.
+- Create a new evaluation.
+- Select the fine-tuned model as the model to evaluate.
+
+![info](https://github.com/balakreshnan/Samples2026/blob/main/Foundry/images/gpt41nano-ft-14.jpg 'fine tuning model')
+
+- Next upload the ground truth dataset.
+
+![info](https://github.com/balakreshnan/Samples2026/blob/main/Foundry/images/gpt41nano-ft-15.jpg 'fine tuning model')
+
+- next Map the fields from the ground truth dataset to the evaluation fields.
+
+![info](https://github.com/balakreshnan/Samples2026/blob/main/Foundry/images/gpt41nano-ft-16.jpg 'fine tuning model')
+
+- Summary of the evaluation. and submit.
+
+![info](https://github.com/balakreshnan/Samples2026/blob/main/Foundry/images/gpt41nano-ft-17.jpg 'fine tuning model')
+
+- here is the status of the evaluation.
+
+![info](https://github.com/balakreshnan/Samples2026/blob/main/Foundry/images/gpt41nano-ft-18.jpg 'fine tuning model')
+
+- Once completed, view the evaluation results.
+
+![info](https://github.com/balakreshnan/Samples2026/blob/main/Foundry/images/gpt41nano-ft-19.jpg 'fine tuning model')
+
+![info](https://github.com/balakreshnan/Samples2026/blob/main/Foundry/images/gpt41nano-ft-20.jpg 'fine tuning model')
+
+![info](https://github.com/balakreshnan/Samples2026/blob/main/Foundry/images/gpt41nano-ft-21.jpg 'fine tuning model')
 
 ## Conclusion
 
