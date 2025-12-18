@@ -1,4 +1,4 @@
-# Microsoft Foundry ARchitecture - Agentic AI Applications
+# Microsoft Foundry Architecture - Agentic AI Applications
 
 ## Overview
 
