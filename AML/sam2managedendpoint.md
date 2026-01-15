@@ -90,7 +90,7 @@ def init():
 
     # ── Add these 3-4 lines ────────────────────────────────
     # hf_token = os.environ.get("HF_TOKEN")
-    hf_token = "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"
+    hf_token = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
     if hf_token:
         login(token=hf_token)
         print("Successfully logged in to Hugging Face")
