@@ -164,3 +164,4 @@ print("Result saved as sam3_result.jpg")
 ![info](https://github.com/balakreshnan/Samples2026/blob/main/AML/images/sam3-notebook-3.jpg 'yolo11n Managed Online Endpoint Test Result')
 
 - Done! You have successfully run inferencing using SAM3 model in an Azure Machine Learning Notebook.
+- This is show case running sam3 in notebook, you can also deploy the model as a managed online endpoint in AML for real-time inferencing.
