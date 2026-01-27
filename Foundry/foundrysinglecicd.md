@@ -21,7 +21,8 @@
   az ad sp create-for-rbac --name "<service-principal-name>" --role contributor --scopes /subscriptions/<subscription-id>/resourceGroups/<resource-group-name>
   ```
 
-- REset the secret for 15 days
+- Reset the secret for 15 days
+- Code and Architecture available at: https://github.com/balakreshnan/foundrycicdbasic
   
 ```
 az ad sp credential reset --name "<service-principal-name>" --end-date "2024-12-31T23:59:59Z"
@@ -33,8 +34,8 @@ az ad sp credential reset --name "<service-principal-name>" --end-date "2024-12-
   - Client Secret (you will need to create one if you haven't already)
   - On the overview page click create service principal.
 
-- Now assign Azure AI Developer role to the service principal on the Foundry, foundry project resource group.
-- Now assign Storage blob data contributor, Storate File Privileged contributor role to the service principal on the Foundry storage account.
+- Now assign Azure AI Developer, Azure AI User role to the service principal on the Foundry, foundry project resource group.
+- Now assign Storage blob data contributor, Storage File Privileged contributor role to the service principal on the Foundry storage account.
 - Above is needed to run the evals and red team agents.
 
 ## Setting up GitHub Secrets
