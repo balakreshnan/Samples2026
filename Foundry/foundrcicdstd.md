@@ -22,7 +22,8 @@
   ```
 
 - Reset the secret for 15 days
-- Code and Architecture available at: https://github.com/balakreshnan/foundrycicdbasic
+- Code and Architecture available at: https://github.com/balakreshnan/msagentframework/blob/main/.github/workflows/agent-consumption-single-env.yml
+- exagent.py, agenteval.py, redteam.py available in the above repo: https://github.com/balakreshnan/msagentframework/tree/main
   
 ```
 az ad sp credential reset --name "<service-principal-name>" --end-date "2024-12-31T23:59:59Z"
