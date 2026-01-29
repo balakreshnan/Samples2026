@@ -11,6 +11,7 @@
 
 - Azure Subscription
 - Azure Machine Learning Workspace
+- Workspace has to be created with User Assigned Managed Identity enabled.
 - Compute Instance
 - Compute cluster for training jobs
 - Refering code from - https://github.com/Azure/azureml-examples/blob/main/cli/monitoring/azureml-e2e-model-monitoring/notebooks/model-monitoring-e2e.ipynb
@@ -537,6 +538,194 @@ Previewing: data/credit-default/production/01.csv
 
 [10 rows x 25 columns]
 ```
+
+- Create a basic monitoring
+
+```
+from azure.identity import DefaultAzureCredential
+from azure.ai.ml import MLClient
+from azure.ai.ml.entities import (
+    AlertNotification,
+    MonitoringTarget,
+    MonitorDefinition,
+    MonitorSchedule,
+    RecurrencePattern,
+    RecurrenceTrigger,
+    ServerlessSparkCompute,
+)
+
+# get a handle to the workspace
+ml_client = MLClient.from_config(credential=DefaultAzureCredential())
+
+# create the compute
+spark_compute = ServerlessSparkCompute(
+    instance_type="standard_e4s_v3", runtime_version="3.4"
+)
+
+# specify your online endpoint deployment
+monitoring_target = MonitoringTarget(
+    ml_task="classification", endpoint_deployment_id="azureml:credit-default-bb26:main"
+)
+
+
+# create alert notification object
+alert_notification = AlertNotification(emails=["bb@test.com", "bb@test.com"])
+
+# create the monitor definition
+monitor_definition = MonitorDefinition(
+    compute=spark_compute,
+    monitoring_target=monitoring_target,
+    alert_notification=alert_notification,
+)
+
+# specify the schedule frequency
+recurrence_trigger = RecurrenceTrigger(
+    frequency="day", interval=1, schedule=RecurrencePattern(hours=3, minutes=15)
+)
+
+# create the monitor
+model_monitor = MonitorSchedule(
+    name="credit_default_monitor_basic",
+    trigger=recurrence_trigger,
+    create_monitor=monitor_definition,
+)
+
+poller = ml_client.schedules.begin_create_or_update(model_monitor)
+created_monitor = poller.result()
+```
+
+- now advanced monitoring with data drift
+
+```
+from azure.identity import DefaultAzureCredential
+from azure.ai.ml import Input, MLClient
+from azure.ai.ml.constants import (
+    MonitorDatasetContext,
+)
+from azure.ai.ml.entities import (
+    AlertNotification,
+    DataDriftSignal,
+    DataQualitySignal,
+    PredictionDriftSignal,
+    DataDriftMetricThreshold,
+    DataQualityMetricThreshold,
+    PredictionDriftMetricThreshold,
+    NumericalDriftMetrics,
+    CategoricalDriftMetrics,
+    DataQualityMetricsNumerical,
+    DataQualityMetricsCategorical,
+    MonitorFeatureFilter,
+    MonitoringTarget,
+    MonitorDefinition,
+    MonitorSchedule,
+    RecurrencePattern,
+    RecurrenceTrigger,
+    ServerlessSparkCompute,
+    ReferenceData,
+)
+
+# get a handle to the workspace
+ml_client = MLClient(
+    DefaultAzureCredential(),
+    subscription_id="xxxx",
+    resource_group_name="rgname",
+    workspace_name="workspacename",
+)
+
+# create your compute
+spark_compute = ServerlessSparkCompute(
+    instance_type="standard_e4s_v3", runtime_version="3.4"
+)
+
+# specify the online deployment (if you have one)
+monitoring_target = MonitoringTarget(
+    ml_task="classification", endpoint_deployment_id="azureml:credit-default-bb26:main"
+)
+
+# training data to be used as baseline dataset
+reference_data_training = ReferenceData(
+    input_data=Input(type="mltable", path="azureml:credit-default-reference:1"),
+    #target_column_name="DEFAULT_NEXT_MONTH",
+    data_context=MonitorDatasetContext.TRAINING,
+)
+
+# create an advanced data drift signal
+features = MonitorFeatureFilter(top_n_feature_importance=10)
+
+metric_thresholds = DataDriftMetricThreshold(
+    numerical=NumericalDriftMetrics(jensen_shannon_distance=0.01),
+    categorical=CategoricalDriftMetrics(pearsons_chi_squared_test=0.02),
+)
+
+advanced_data_drift = DataDriftSignal(
+    reference_data=reference_data_training,
+    features=features,
+    metric_thresholds=metric_thresholds,
+)
+
+# create an advanced prediction drift signal
+metric_thresholds = PredictionDriftMetricThreshold(
+    categorical=CategoricalDriftMetrics(jensen_shannon_distance=0.01)
+)
+
+advanced_prediction_drift = PredictionDriftSignal(
+    reference_data=reference_data_training, metric_thresholds=metric_thresholds
+)
+
+# create an advanced data quality signal
+features = ["SEX", "EDUCATION", "AGE"]
+
+metric_thresholds = DataQualityMetricThreshold(
+    numerical=DataQualityMetricsNumerical(null_value_rate=0.01),
+    categorical=DataQualityMetricsCategorical(out_of_bounds_rate=0.02),
+)
+
+advanced_data_quality = DataQualitySignal(
+    reference_data=reference_data_training,
+    features=features,
+    metric_thresholds=metric_thresholds,
+    alert_enabled=False,
+)
+
+# put all monitoring signals in a dictionary
+monitoring_signals = {
+    "data_drift_advanced": advanced_data_drift,
+    "data_quality_advanced": advanced_data_quality,
+}
+
+# create alert notification object
+alert_notification = AlertNotification(emails=["abc@example.com", "def@example.com"])
+
+# create the monitor definition
+monitor_definition = MonitorDefinition(
+    compute=spark_compute,
+    monitoring_target=monitoring_target,
+    monitoring_signals=monitoring_signals,
+    alert_notification=alert_notification,
+)
+
+# specify the frequency on which to run your monitor
+recurrence_trigger = RecurrenceTrigger(
+    frequency="day", interval=1, schedule=RecurrencePattern(hours=3, minutes=15)
+)
+
+# create your monitor
+model_monitor = MonitorSchedule(
+    name="credit_default_monitor_advanced",
+    trigger=recurrence_trigger,
+    create_monitor=monitor_definition,
+)
+
+poller = ml_client.schedules.begin_create_or_update(model_monitor)
+created_monitor = poller.result()
+```
+
+![info](https://github.com/balakreshnan/Samples2026/blob/main/AML/images/amlmodelmonitor-1.jpg 'yolo11n Managed Online Endpoint Test Result')
+
+![info](https://github.com/balakreshnan/Samples2026/blob/main/AML/images/amlmodelmonitor-2.jpg 'yolo11n Managed Online Endpoint Test Result')
+
+![info](https://github.com/balakreshnan/Samples2026/blob/main/AML/images/amlmodelmonitor-3.jpg 'yolo11n Managed Online Endpoint Test Result')
+
 
 ## Cleanup
 
