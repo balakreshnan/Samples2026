@@ -720,6 +720,9 @@ poller = ml_client.schedules.begin_create_or_update(model_monitor)
 created_monitor = poller.result()
 ```
 
+- now go to left menu in AML studio and click on monitoring
+- you should see your monitor listed there
+
 ![info](https://github.com/balakreshnan/Samples2026/blob/main/AML/images/amlmodelmonitor-1.jpg 'yolo11n Managed Online Endpoint Test Result')
 
 ![info](https://github.com/balakreshnan/Samples2026/blob/main/AML/images/amlmodelmonitor-2.jpg 'yolo11n Managed Online Endpoint Test Result')
