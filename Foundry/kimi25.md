@@ -1,9 +1,10 @@
-# Kimi 2.5 model in Microsoft Foundry - Using Python Code
+# Kimi 2.5 model in Microsoft Foundry - Using Python Code Run agents in parallel
 
 ## Introduction
 
 - This document provides a guide on how to use the Kimi 2.5 model in Microsoft Foundry using Python code.
 - Using python SDK, you can interact with the Kimi 2.5 model for various tasks such as text generation, summarization, and more.
+- Running agents in parallel.
 
 ## Prerequisites
 
