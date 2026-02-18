@@ -127,6 +127,8 @@
 
 - now go to copilot and you should be able to see the data agent that we created in the list of available agents and you can start using it to ask questions and get insights from the data.
 
+![info](https://github.com/balakreshnan/Samples2026/blob/main/Foundry/images/ontology-21.jpg 'fine tuning model')
+
 ![info](https://github.com/balakreshnan/Samples2026/blob/main/Foundry/images/ontology-19.jpg 'fine tuning model')
 
 ![info](https://github.com/balakreshnan/Samples2026/blob/main/Foundry/images/ontology-20.jpg 'fine tuning model')
