@@ -43,7 +43,11 @@ This architecture doesn’t replace the Category Manager—it elevates them. Age
   
 - [Category Manager Agent Workflow](https://youtu.be/3wPluZeFWKk)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3wPluZeFWKk" title="Category Manager Agent Workflow" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<video controls width="500">
+    <source src="https://www.youtube.com/embed/3wPluZeFWKk" type="video/mp4">
+    Your browser does not support the video tag.
+    </source>
+</video>
 
 ## Conclusion
 
