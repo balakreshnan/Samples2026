@@ -39,6 +39,8 @@ This architecture doesn’t replace the Category Manager—it elevates them. Age
 
 ## Video
 
+- Watch the video to see how this workflow comes together in action, demonstrating how the agents collaborate to provide insights and recommendations to the Category Manager in a seamless manner.
+  
 - [Category Manager Agent Workflow](https://youtu.be/3wPluZeFWKk)
 
 ## Conclusion
