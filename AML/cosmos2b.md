@@ -15,7 +15,7 @@
 - Idea here is to simulate edge device inference using smaller GPU instance, but you can choose a larger instance if needed for faster inference.
 - Now lets create conda environment and install necessary libraries.
 
-````
+```
 conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
 conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
 
