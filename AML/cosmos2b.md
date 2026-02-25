@@ -65,7 +65,7 @@ processor: transformers.Qwen3VLProcessor = (
 
 - now prepare the message with the video input and run inference.
 
-````
+```
 video_messages = [
     {
         "role": "system",
@@ -88,8 +88,7 @@ video_messages = [
 
 - Now run the inference and print the output.
 
-````
-# Process inputs
+```
 inputs = processor.apply_chat_template(
     video_messages,
     tokenize=True,
@@ -100,7 +99,6 @@ inputs = processor.apply_chat_template(
 )
 inputs = inputs.to(model.device)
 
-# Run inference
 generated_ids = model.generate(**inputs, max_new_tokens=4096)
 generated_ids_trimmed = [
     out_ids[len(in_ids) :]
@@ -116,6 +114,7 @@ output_text = processor.batch_decode(
 - now print the output text.
 
 ```
+
 print(output_text)
 ```
 
