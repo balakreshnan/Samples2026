@@ -44,7 +44,7 @@ login(token=hf_token)
 - make sure there is a sample mp4 file available in the same directory as the notebook for testing.
 - import necessary libraries and load the model.
 
-````
+```
 import transformers
 import torch
 ```
