@@ -111,6 +111,7 @@ Current discussion topic/claim (update when provided): AI for Business.
 - Let's create a streamlit app to consume the workflow to answer questions about the student.
 - Show the agents output and tools used in the streamlit app.
 - Create a voice enable interface if they want to use voice output.
+- i used github copilot with claude opus 4.6 to build the streamlit app and here is the code for the streamlit app.
 
 ```
 import asyncio
@@ -884,6 +885,8 @@ if __name__ == "__main__":
 ```
 
 - run the above code in streamlit and ask questions to the agent. You should see the token usage and agent outputs in the right panel, and you can generate voice output for the assistant's responses.
+
+![info](https://github.com/balakreshnan/Samples2026/blob/main/Foundry/images/studentiiq-5.jpg 'fine tuning model')
 
 - You tube link - https://youtu.be/wL3SSGFd_NA
 
