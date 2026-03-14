@@ -1,4 +1,4 @@
-# Concept to build a Student IQ
+# Concept to build a Student IQ - Agent Framework Workflow + Microsoft Foundry Agents
 
 ## Introduction
 
@@ -7,6 +7,7 @@
 - We will have a assistant agent and mentor agent to answer questions about the student.
 - Assistant agent will provide technical help about building agentic ai applications and mentor agent will provide guidance on how to build the application and also provide feedback on the application.
 - We use Microsoft learn to tap into current information about the student.
+- Using Microsoft Agent Framework, workflows and Microsoft Foundry Agents and Foundry Tools.
 
 ## prerequisites
 

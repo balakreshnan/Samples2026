@@ -1,4 +1,4 @@
-# Concept to build a Manufacturing Plant IQ
+# Concept to build a Manufacturing Plant IQ - Agent Framework Workflow + Microsoft Foundry Agents
 
 ## Introduction
 
@@ -6,6 +6,7 @@
 - The idea is to create a knowledge graph of the manufacturing plant and use it to answer questions about the plant.
 - We will have a PlantIEAgent agent, PlantREAgent agent and PlantSupAgent agent to answer questions about the plant.
 - Assistant agent will provide technical help about building agentic ai applications and mentor agent will provide guidance on how to build the application and also provide feedback on the application.
+- Using Microsoft Agent Framework, workflows and Microsoft Foundry Agents and Foundry Tools.
 
 ## prerequisites
 
