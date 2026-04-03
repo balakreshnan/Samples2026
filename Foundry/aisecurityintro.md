@@ -140,20 +140,33 @@ This is runtime protection for live queries and agent actions.
 
 diagram already highlights natural choke points (Content Safety, Guardrails, Red Team/Evaluations loops). These are the highest-ROI places for controls—insert mitigations here to create defense-in-depth.
 
-- Data (both pipelines) – Entry point for poisoning.
-- Mitigation: Automated validation + provenance tracking + redaction before ingestion/storage.
-- Content Safety (pre-Models in both flows) – Primary input filter.
-- Mitigation: Prompt Shields + harm-category classifiers (hate, violence, PII); block or rewrite before model.
-- Evaluations + Red Team (Dev/Training) – Pre-deployment gate.
-- Mitigation: Automated adversarial testing + human red teaming; fail builds if thresholds breached; feed directly into Guardrails.
-- Guardrails (both pipelines, especially post-Red Team and in Inferencing) – Runtime + feedback choke point.
-- Mitigation: Layered (NeMo/AWS Bedrock style): input validation → model call → output filtering → memory sanitization. Use as a feedback loop for continuous improvement.
-- Agents/Tools/Memory (Inferencing) – Behavioral choke points.
-- Mitigation: Least-privilege tool calls, schema validation, memory isolation/expiration, step-wise approval for high-risk actions.
-- Knowledge Base (both) – Retrieval choke point.
-- Mitigation: Chunk attribution, trust scoring, RBAC per query, redaction of sensitive chunks.
-- Infrastructure (final layer) – Deployment choke point.
-- Mitigation: AI Gateway (rate limits, auth, logging), zero-trust networking, anomaly detection, immutable infra-as-code.
+- Data (both pipelines)
+  – Entry point for poisoning.
+  - Mitigation: Automated validation + provenance tracking + redaction before ingestion/storage.
+
+- Content Safety (pre-Models in both flows)
+  – Primary input filter.
+  - Mitigation: Prompt Shields + harm-category classifiers (hate, violence, PII); block or rewrite before model.
+  
+- Evaluations + Red Team (Dev/Training)
+  – Pre-deployment gate.
+  - Mitigation: Automated adversarial testing + human red teaming; fail builds if thresholds breached; feed directly into Guardrails.
+
+- Guardrails (both pipelines, especially post-Red Team and in Inferencing) 
+  – Runtime + feedback choke point.
+  - Mitigation: Layered (NeMo/AWS Bedrock style): input validation → model call → output filtering → memory sanitization. Use as a feedback loop for continuous improvement.
+
+- Agents/Tools/Memory (Inferencing)
+  – Behavioral choke points.
+  - Mitigation: Least-privilege tool calls, schema validation, memory isolation/expiration, step-wise approval for high-risk actions.
+
+- Knowledge Base (both) 
+  – Retrieval choke point.
+  - Mitigation: Chunk attribution, trust scoring, RBAC per query, redaction of sensitive chunks.
+
+- Infrastructure (final layer)
+  – Deployment choke point.
+  - Mitigation: AI Gateway (rate limits, auth, logging), zero-trust networking, anomaly detection, immutable infra-as-code.
 
 ## Recommended Implementation Order (Practical Roadmap)
 
