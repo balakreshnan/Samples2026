@@ -6,7 +6,7 @@
 
 ## AI Security: Dev/Training vs. Inferencing Pipelines
 
-- Diagram provides an excellent high-level view of the AI security lifecycle, splitting into two interconnected phases: 
+- Diagram provides an excellent high-level view of the AI security lifecycle, splitting into two interconnected phases
   - Dev/Training (building and hardening the system)
   - Inferencing (runtime execution)
 - This aligns closely with industry frameworks like OWASP LLM Top 10 (2025), NIST AI RMF, and MITRE ATLAS, which emphasize "shift-left" security (catch issues early in dev) combined with runtime defenses.
@@ -166,4 +166,4 @@ This structure turns your diagram into a resilient, auditable security program. 
 
 ## Conclusion
 
-- The above security model is evolving rapidly, but this framework provides a comprehensive starting point. It emphasizes the importance of both proactive (Dev/Training) and reactive (Inferencing) controls, with clear choke points for mitigation. By implementing these layers thoughtfully, organizations can significantly reduce the risk of AI-related security incidents while still enabling powerful capabilities.
+- The above security model is evolving rapidly, but this framework provides a comprehensive starting point. It emphasizes the importance of both proactive (Dev/Training) and reactive (Inferencing) controls, with clear choke points for mitigation. By implementing these layers thoughtfully, organizations can significantly reduce the risk of AI-related security incidents while still enabling powerful capabilities
