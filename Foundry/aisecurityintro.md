@@ -2,7 +2,7 @@
 
 ## Introduction
 
-- As organizations rapidly adopt generative AI and agentic systems, security becomes paramount. The attack surface expands from traditional software to include training data, models, agents, tools, and runtime interactions. This document provides a comprehensive overview of the AI security lifecycle, covering both the Dev/Training and Inferencing pipelines. It maps out key components, risks, and mitigations based on current best practices from OWASP LLM Top 10 (2025), NIST AI RMF, MITRE ATLAS, and industry research as of 2026.
+As organizations rapidly adopt generative AI and agentic systems, security becomes paramount. The attack surface expands from traditional software to include training data, models, agents, tools, and runtime interactions. This document provides a comprehensive overview of the AI security lifecycle, covering both the Dev/Training and Inferencing pipelines. It maps out key components, risks, and mitigations based on current best practices from OWASP LLM Top 10 (2025), NIST AI RMF, MITRE ATLAS, and industry research as of 2026.
 
 ## AI Security Lifecycle: Dev/Training vs. Inferencing Pipelines
 
