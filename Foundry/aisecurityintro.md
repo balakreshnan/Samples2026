@@ -1,4 +1,4 @@
-# AI Security
+# AI Security - Gen AI/Agentic AI
 
 ## AI Security Lifecycle: Dev/Training vs. Inferencing Pipelines
 
