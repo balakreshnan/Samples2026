@@ -146,37 +146,37 @@ diagram already highlights natural choke points (Content Safety, Guardrails, Red
 
 - Data (both pipelines)
 
-  – Entry point for poisoning.
+  - Entry point for poisoning.
   - Mitigation: Automated validation + provenance tracking + redaction before ingestion/storage.
 
 - Content Safety (pre-Models in both flows)
 
-  – Primary input filter.
+  - Primary input filter.
   - Mitigation: Prompt Shields + harm-category classifiers (hate, violence, PII); block or rewrite before model.
   
 - Evaluations + Red Team (Dev/Training)
   
-  – Pre-deployment gate.
+  - Pre-deployment gate.
   - Mitigation: Automated adversarial testing + human red teaming; fail builds if thresholds breached; feed directly into Guardrails.
 
 - Guardrails (both pipelines, especially post-Red Team and in Inferencing)
   
-  – Runtime + feedback choke point.
+  - Runtime + feedback choke point.
   - Mitigation: Layered (NeMo/AWS Bedrock style): input validation → model call → output filtering → memory sanitization. Use as a feedback loop for continuous improvement.
 
 - Agents/Tools/Memory (Inferencing)
   
-  – Behavioral choke points.
+  - Behavioral choke points.
   - Mitigation: Least-privilege tool calls, schema validation, memory isolation/expiration, step-wise approval for high-risk actions.
 
 - Knowledge Base (both)
   
-  – Retrieval choke point.
+  - Retrieval choke point.
   - Mitigation: Chunk attribution, trust scoring, RBAC per query, redaction of sensitive chunks.
 
 - Infrastructure (final layer)
   
-  – Deployment choke point.
+  - Deployment choke point.
   - Mitigation: AI Gateway (rate limits, auth, logging), zero-trust networking, anomaly detection, immutable infra-as-code.
 
 ## Recommended Implementation Order (Practical Roadmap)
@@ -190,4 +190,4 @@ This structure turns your diagram into a resilient, auditable security program. 
 
 ## Conclusion
 
-- The above security model is evolving rapidly, but this framework provides a comprehensive starting point. It emphasizes the importance of both proactive (Dev/Training) and reactive (Inferencing) controls, with clear choke points for mitigation. By implementing these layers thoughtfully, organizations can significantly reduce the risk of AI-related security incidents while still enabling powerful capabilities
+The above security model is evolving rapidly, but this framework provides a comprehensive starting point. It emphasizes the importance of both proactive (Dev/Training) and reactive (Inferencing) controls, with clear choke points for mitigation. By implementing these layers thoughtfully, organizations can significantly reduce the risk of AI-related security incidents while still enabling powerful capabilities.
