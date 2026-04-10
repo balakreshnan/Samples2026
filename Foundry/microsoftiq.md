@@ -8,11 +8,13 @@
 - Fabric IQ for Order management data for retail scenario
 - Foundry IQ to show case construction RFP data
 
+## Architecture
+
+![info](https://github.com/balakreshnan/Samples2026/blob/main/Foundry/images/microsoftiq-1.png 'fine tuning model')
+
 ## Video Demo
 
 <a href="https://youtu.be/Y3j3aePsfrU" target="_blank">Open video in new window</a>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Y3j3aePsfrU" frameborder="0" allowfullscreen></iframe>
 
 ### Building Unified Intelligence: A Guide to Microsoft IQ with Foundry Agents
 
