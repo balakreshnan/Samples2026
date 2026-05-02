@@ -25,7 +25,7 @@ It serves as a hub-and-spoke model, where the CoE defines standards and enables 
 
 ## The Strategic Framework: Four Pillars of AI CoE
 
-The framework in your image highlights four foundational pillars surrounding the AI CoE. Let’s break each one down in detail.
+The framework in your image highlights four foundational pillars surrounding the AI CoE. Let’s break each one down in detail. Key to success will be small agile teams that can rapidly prototype, test, and iterate AI solutions before scaling them across the enterprise.
 
 ### 1. Organizational Leadership
 
