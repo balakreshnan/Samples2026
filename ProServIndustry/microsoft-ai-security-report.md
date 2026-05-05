@@ -4,7 +4,7 @@
 
 Microsoft's AI security stack is organized around four operational pillars — **runtime content safety**, **PII discovery and protection**, **pre-production and continuous evaluation**, and **adversarial red teaming** — anchored by a governance layer (Responsible AI Standard, NIST AI RMF, ISO/IEC 42001) and a posture-management layer (Microsoft Defender for Cloud AI-SPM and Threat Protection for AI). For a Principal CSA, the architectural pattern to internalize is: **Foundry / Azure OpenAI is where models run; Content Safety is the runtime guardrail; Purview + Language PII are the data guardrail; `azure-ai-evaluation` is the quality gate; PyRIT and the AI Red Teaming Agent are the adversarial gate; Defender for Cloud is the posture and SOC integration.** Confidence in the technical claims below is **HIGH** — every load-bearing fact is sourced to learn.microsoft.com, microsoft.com, NIST, or ISO primary references.
 
-![Architecture](https://github.com/balakreshnan/Samples2026/blob/main/ProServIndustry/images/microsoft-ai-security-four-pillars-16x9.jpg, "Architecture")
+![AI Security](https://github.com/balakreshnan/Samples2026/blob/main/ProServIndustry/images/microsoft-ai-security-four-pillars-16x9.jpg 'AI Security')
 ---
 
 ## Pillar 1 — Azure AI Content Safety
