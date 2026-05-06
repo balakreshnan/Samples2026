@@ -1,4 +1,4 @@
-# Azure Databricks Genie -> Microsoft Foundry
+# Azure Databricks Genie -> Microsoft Foundry Agent
 
 ## Overview
 
