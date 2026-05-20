@@ -15,6 +15,8 @@ Based on the provided strategic framework, the AI CoE should be built around fou
 
 These pillars surround the central AI CoE and define what the organization must establish to scale AI safely and effectively.
 
+![info](https://github.com/balakreshnan/Samples2026/blob/main/ProServIndustry/images/CoE-Image1.jpg 'fine tuning model')
+
 ---
 
 ## 2. Strategic Objectives
