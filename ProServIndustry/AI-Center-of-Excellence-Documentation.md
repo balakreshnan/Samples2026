@@ -17,6 +17,8 @@ These pillars surround the central AI CoE and define what the organization must 
 
 ![info](https://github.com/balakreshnan/Samples2026/blob/main/ProServIndustry/images/CoE-Image1.jpg 'fine tuning model')
 
+![info](https://github.com/balakreshnan/Samples2026/blob/main/ProServIndustry/images/CoE-image-2.jpg 'fine tuning model')
+
 ---
 
 ## 2. Strategic Objectives
