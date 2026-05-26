@@ -105,6 +105,66 @@ For a 50-person SMB, even modest gains across these dimensions easily translate 
 
 ---
 
+## AI Tools to Get Started With
+
+You don't need to build anything custom to get going. The fastest path for most SMBs is to pick a small set of off-the-shelf tools, get your team using them, and expand once you've found what sticks. Here are the most accessible starting points.
+
+### Everyday AI Assistants (Chat-First)
+
+These are the "Swiss Army knife" tools — great for drafting, summarizing, brainstorming, and Q&A across almost any role.
+
+- **Microsoft Copilot** — Built into Microsoft 365 (Word, Excel, PowerPoint, Outlook, Teams). The lowest-friction option if your business already runs on M365.
+  - *Example:* In Outlook, *"Summarize this email thread and draft a reply confirming the meeting."* In Excel, *"Analyze this sales data and surface the top three trends."* In Teams, *"Catch me up on what I missed in this channel today."*
+- **ChatGPT** (OpenAI) — General-purpose assistant with strong reasoning, web browsing, and a Team/Business plan with data privacy.
+  - *Example:* *"Draft a 200-word company-wide email announcing our new PTO policy in a warm, professional tone."* Or upload a PDF: *"Summarize this 40-page vendor contract and flag any clauses that look unusual."*
+- **Claude** (Anthropic) — Strong on long-document analysis, careful reasoning, and writing quality. Available via web, desktop apps, and the Claude.ai Team plan.
+  - *Example:* *"Here's our 80-page employee handbook — extract every policy that touches remote work and put them in a single-page summary for managers."*
+- **Google Gemini** — Integrated into Google Workspace (Docs, Sheets, Gmail). Strong fit if your business runs on Google instead of Microsoft.
+  - *Example:* In Gmail, *"Draft a polite follow-up to the three customers who didn't respond last week."*
+
+### Productivity & Workflow Tools
+
+These take the chat model and embed it into the apps your team already uses.
+
+- **Microsoft 365 Copilot** — In Word it drafts, in Excel it analyzes, in PowerPoint it builds first-draft decks from a doc, in Teams it summarizes meetings live.
+- **Copilot Cowork** — A team-oriented AI workspace that connects to your Microsoft 365 data (email, calendar, files, Teams) and runs multi-step tasks across them. Good for "do this whole workflow for me" requests rather than one-off chat answers.
+  - *Example:* *"Pull the last 30 days of customer feedback emails, categorize them, draft a one-page summary for the leadership team, and put the deck in our shared folder."*
+- **Notion AI** — AI inside your team wiki. Great for turning meeting notes into action items, drafting docs, and Q&A over your internal knowledge base.
+- **Google Workspace with Gemini** — Smart Compose, Help Me Write, and AI in Sheets for analysis and summaries.
+- **Slack AI** — Channel summaries, thread recaps, and search across your Slack history.
+
+### Specialized Tools by Use Case
+
+Once you've picked a starting focus area, layer in a tool that's purpose-built for that job.
+
+- **Customer Care** — Intercom Fin, Zendesk AI, Salesforce Einstein, Front AI for ticket triage and chat deflection.
+- **Sales & Marketing** — Jasper or Copy.ai for marketing copy, HubSpot AI for CRM and campaigns, Gamma or Beautiful.ai for fast first-draft decks, Canva Magic Studio for visuals.
+- **Knowledge Search** — Glean, Microsoft Copilot with SharePoint grounding, or Notion AI for internal Q&A over company documents.
+- **Meetings & Notes** — Otter.ai, Fireflies.ai, or Microsoft Teams' built-in recap for transcripts, summaries, and action items.
+- **Coding & Developer Productivity** — GitHub Copilot, Cursor, or Claude Code if your team builds software.
+- **Image & Video** — DALL-E (via ChatGPT), Midjourney, Adobe Firefly for marketing visuals; Descript or Synthesia for video.
+
+### How to Pick
+
+Don't try to evaluate twenty tools. Use this short filter:
+
+1. **Where does your data already live?** M365 → start with Copilot. Google → start with Gemini. Neither → start with ChatGPT or Claude.
+2. **What's your starting focus area?** Knowledge Source needs a tool that can ground on your docs. Customer Care needs a tool that can plug into your support system. Sales & Marketing benefits most from a general assistant plus one specialist (e.g., Copy.ai or HubSpot).
+3. **Pick a paid Team/Business tier from day one.** Free tiers often train on your data; paid business plans don't, and the cost (typically $20–$30 per user per month) is trivial compared to the productivity gain.
+4. **One general assistant + one specialist.** That's enough to get started. Don't sprawl.
+
+### Quick Examples by Role
+
+- **Owner / Executive:** *"Summarize this week's customer escalation emails and tell me which three need my attention."*
+- **Sales Rep:** *"Draft a follow-up email to this prospect referencing our last call notes and the case study I attached."*
+- **Marketing:** *"Turn this product launch press release into a LinkedIn post, a Twitter thread, and a one-page sell sheet."*
+- **Customer Service:** *"Read this 30-minute call transcript and generate the case summary, action items, and a follow-up email to the customer."*
+- **HR:** *"Draft a new-hire welcome email and a 30/60/90 plan based on this job description."*
+- **Operations:** *"Read these three vendor quotes and put the key terms in a comparison table."*
+- **Finance:** *"Analyze this expense report and flag anything outside policy."*
+
+---
+
 ## The People Side: How to Build Momentum
 
 ### Find a Champion
