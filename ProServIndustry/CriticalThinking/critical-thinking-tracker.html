@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Critical Thinking — 8-Week Practice Tracker</title>
+<style>
+  :root{
+    --navy:#1f3a5f; --blue:#2e6da4; --accent:#c0392b;
+    --green:#1e7e45; --green-bg:#e4f4ea;
+    --ink:#1f2733; --muted:#5a6b7e; --line:#d9e2ec;
+    --bg:#eef2f7; --card:#ffffff; --band:#f5f8fb;
+    --shadow:0 1px 3px rgba(20,40,70,.10),0 6px 18px rgba(20,40,70,.06);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --navy:#9cc2ec; --blue:#7fb0e0; --accent:#ef8b7f;
+      --green:#65d99a; --green-bg:#16361f;
+      --ink:#e8eef6; --muted:#9fb0c4; --line:#2c3a4c;
+      --bg:#0f1722; --card:#16202d; --band:#1a2531;
+      --shadow:0 1px 3px rgba(0,0,0,.4),0 6px 18px rgba(0,0,0,.3);
+    }
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Segoe UI",Arial,Helvetica,system-ui,sans-serif;
+    line-height:1.5; -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .wrap{max-width:960px; margin:0 auto; padding:28px 20px 60px}
+  header.masthead{
+    background:linear-gradient(135deg,var(--navy),var(--blue));
+    color:#fff; border-radius:14px; padding:26px 28px; box-shadow:var(--shadow);
+  }
+  @media (prefers-color-scheme: dark){
+    header.masthead{background:linear-gradient(135deg,#13243a,#1d3f63); color:#eaf2fb}
+  }
+  header.masthead h1{margin:0 0 4px; font-size:26px; letter-spacing:.2px}
+  header.masthead p{margin:0; opacity:.92; font-size:14px}
+
+  .toolbar{
+    display:flex; flex-wrap:wrap; gap:12px; align-items:center;
+    margin:18px 0 8px; justify-content:space-between;
+  }
+  .progress-wrap{flex:1 1 320px; min-width:260px}
+  .progress-line{display:flex; justify-content:space-between; font-size:13px;
+    color:var(--muted); margin-bottom:6px}
+  .progress-line strong{color:var(--ink)}
+  .bar{height:12px; background:var(--line); border-radius:99px; overflow:hidden}
+  .bar > span{display:block; height:100%; width:0%;
+    background:linear-gradient(90deg,var(--blue),var(--green)); transition:width .3s ease}
+  .btns{display:flex; gap:10px; flex-wrap:wrap}
+  button{
+    font:inherit; font-size:14px; font-weight:600; cursor:pointer;
+    border:1px solid transparent; border-radius:9px; padding:10px 16px;
+    transition:filter .15s ease, background .15s ease;
+  }
+  button:hover{filter:brightness(1.05)}
+  .btn-primary{background:var(--blue); color:#fff}
+  .btn-ghost{background:transparent; color:var(--muted); border-color:var(--line)}
+
+  .stat-row{display:flex; gap:14px; flex-wrap:wrap; margin:14px 0 4px}
+  .stat{flex:1 1 150px; background:var(--card); border:1px solid var(--line);
+    border-radius:12px; padding:12px 16px; box-shadow:var(--shadow)}
+  .stat b{display:block; font-size:22px; color:var(--blue)}
+  .stat span{font-size:12.5px; color:var(--muted)}
+
+  .week{
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:18px 20px; margin-top:18px; box-shadow:var(--shadow);
+    border-inline-start:5px solid var(--blue); break-inside:avoid;
+  }
+  .week.done{border-inline-start-color:var(--green)}
+  .week-head{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap}
+  .badge{background:var(--navy); color:#fff; font-weight:700; font-size:13px;
+    border-radius:8px; padding:4px 10px; white-space:nowrap}
+  @media (prefers-color-scheme: dark){ .badge{background:#22344c; color:#dcebff} }
+  .week-head h2{margin:0; font-size:17px; color:var(--ink); flex:1 1 auto}
+  .skill{font-size:12.5px; color:var(--muted); font-style:italic}
+  .week-days-count{font-size:13px; font-weight:700; color:var(--blue); white-space:nowrap}
+
+  .practice{margin:12px 0; font-size:14px; color:var(--ink)}
+  .practice em{color:var(--muted); font-style:normal; font-weight:600}
+
+  .days{display:flex; gap:8px; flex-wrap:wrap; margin:10px 0 4px}
+  .day{flex:1 1 90px}
+  .day label{
+    display:flex; align-items:center; gap:8px; cursor:pointer;
+    border:1px solid var(--line); border-radius:9px; padding:8px 10px;
+    font-size:13px; background:var(--band); transition:background .15s,border-color .15s;
+  }
+  .day input:checked + span{color:var(--green); font-weight:700}
+  .day label:has(input:checked){background:var(--green-bg); border-color:var(--green)}
+  input[type=checkbox]{width:17px; height:17px; accent-color:var(--blue); margin:0; cursor:pointer}
+
+  .deliverable{
+    margin-top:14px; background:var(--band); border:1px solid var(--line);
+    border-radius:10px; padding:12px 14px;
+  }
+  .deliverable .lbl{font-size:11.5px; text-transform:uppercase; letter-spacing:.6px;
+    color:var(--muted); font-weight:700; margin-bottom:4px}
+  .deliverable p{margin:0 0 10px; font-size:14px}
+  .deliverable label{display:flex; align-items:center; gap:9px; cursor:pointer;
+    font-size:13.5px; font-weight:600; color:var(--ink)}
+  .deliverable label:has(input:checked){color:var(--green)}
+
+  .notes{margin-top:12px}
+  .notes label{font-size:11.5px; text-transform:uppercase; letter-spacing:.6px;
+    color:var(--muted); font-weight:700; display:block; margin-bottom:5px}
+  textarea{
+    width:100%; min-height:46px; resize:vertical; font:inherit; font-size:13.5px;
+    color:var(--ink); background:var(--card); border:1px solid var(--line);
+    border-radius:9px; padding:9px 11px;
+  }
+  textarea:focus, .day label:focus-within, button:focus-visible{
+    outline:2px solid var(--blue); outline-offset:1px}
+
+  footer.note{margin-top:26px; font-size:13px; color:var(--muted); text-align:center}
+  .saved{font-size:12.5px; color:var(--green); font-weight:600; min-height:18px}
+
+  @media print{
+    body{background:#fff}
+    .wrap{max-width:none; padding:0}
+    .no-print{display:none !important}
+    header.masthead{border-radius:0; box-shadow:none;
+      background:var(--navy) !important; color:#fff !important}
+    .week, .stat{box-shadow:none; break-inside:avoid; page-break-inside:avoid}
+    .week{border:1px solid #bbb; border-inline-start:5px solid var(--blue)}
+    textarea{min-height:38px}
+    .stat-row{margin-top:8px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <h1>Critical Thinking — 8-Week Practice Tracker</h1>
+    <p>Tick each day you practise. Your progress saves automatically in this browser. Use <strong>Export PDF</strong> to print or save a copy.</p>
+  </header>
+
+  <div class="toolbar no-print">
+    <div class="progress-wrap">
+      <div class="progress-line"><span>Overall progress</span><strong id="overallPct">0%</strong></div>
+      <div class="bar"><span id="overallBar"></span></div>
+    </div>
+    <div class="btns">
+      <button class="btn-primary" id="exportBtn" type="button">Export PDF</button>
+      <button class="btn-ghost" id="resetBtn" type="button">Reset</button>
+    </div>
+  </div>
+
+  <div class="stat-row no-print">
+    <div class="stat"><b id="daysStat">0 / 56</b><span>practice days complete</span></div>
+    <div class="stat"><b id="delivStat">0 / 8</b><span>weekly deliverables done</span></div>
+    <div class="stat"><b id="weeksStat">0 / 8</b><span>weeks fully complete</span></div>
+  </div>
+  <div class="saved no-print" id="savedMsg"></div>
+
+  <main id="weeks"></main>
+
+  <footer class="note">
+    Read the companion tutorial (<strong>critical-thinking-tutorial.pdf</strong>) to learn what to do each week.
+    One week per card · ~10–20 min a day · the skill comes from repetition, not reading.
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var STORAGE_KEY = "ct-tracker-v1";
+  var WEEKS = [
+    {n:1, theme:"Metacognition & assumptions", skill:"Seeing your own thinking",
+     practice:"Each evening, write the hidden assumptions under one belief or decision you made.",
+     deliverable:"7 beliefs, each with its 2–4 underlying assumptions."},
+    {n:2, theme:"Clarity, accuracy & precision", skill:"Pinning claims down",
+     practice:"Run one claim a day through: Is it clear? Accurate? Precise? How would I verify it?",
+     deliverable:"Rewrite 5 vague statements into clear, precise, checkable ones — each with its verification question."},
+    {n:3, theme:"Confirmation bias & evidence", skill:"Weighing proof honestly",
+     practice:"Pick one strongly-held belief daily; spend 10 minutes finding the strongest case against it.",
+     deliverable:"A running bias log of every anchoring / cherry-picking / generalizing moment you catch."},
+    {n:4, theme:"Steelmanning (intellectual empathy)", skill:"Representing opponents fairly",
+     practice:"For any view you disagree with, write its strongest version before you critique it.",
+     deliverable:"3 steelmanned arguments for positions you personally reject."},
+    {n:5, theme:"Depth & breadth", skill:"Multi-perspective analysis",
+     practice:"Take one issue: list the complexities most people skip, then write it from 3 genuinely different viewpoints.",
+     deliverable:"1 issue analysed for depth + a three-perspective breadth view."},
+    {n:6, theme:"Fallacies (argument diagnosis)", skill:"Diagnosing broken arguments",
+     practice:"Find one fallacy a day in real content (ads, op-eds, meetings); name it and explain the flaw.",
+     deliverable:"A log of 7 real-world fallacies, each named and explained."},
+    {n:7, theme:"Argument construction", skill:"Building defensible claims",
+     practice:"Make one claim daily in the structure: claim → evidence → reasoning (warrant) → caveat.",
+     deliverable:"5 fully-structured arguments, each with an explicit caveat."},
+    {n:8, theme:"Integration (the full loop)", skill:"Deciding under the full framework",
+     practice:"Apply the full decision loop — or at least the 10-minute rule — to one real decision.",
+     deliverable:"1 significant decision worked through the framework, with a pre-mortem + confidence rating."}
+  ];
+
+  var state = load();
+  var savedTimer = null;
+
+  function load(){
+    try{ return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
+    catch(e){ return {}; }
+  }
+  function save(){
+    try{
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      flashSaved();
+    }catch(e){ /* private mode: tracking still works in-session */ }
+  }
+  function flashSaved(){
+    var el = document.getElementById("savedMsg");
+    el.textContent = "✓ Progress saved";
+    if(savedTimer){ clearTimeout(savedTimer); }
+    savedTimer = setTimeout(function(){ el.textContent = ""; }, 1400);
+  }
+  function key(id){ return state[id] === true; }
+
+  function el(tag, cls, html){
+    var e = document.createElement(tag);
+    if(cls){ e.className = cls; }
+    if(html != null){ e.innerHTML = html; }
+    return e;
+  }
+
+  function build(){
+    var root = document.getElementById("weeks");
+    WEEKS.forEach(function(w){
+      var card = el("section","week");
+      card.id = "week"+w.n;
+
+      var head = el("div","week-head");
+      head.appendChild(el("span","badge","Week "+w.n));
+      head.appendChild(el("h2",null,w.theme));
+      head.appendChild(el("span","skill",w.skill));
+      var cnt = el("span","week-days-count"); cnt.id = "cnt"+w.n;
+      head.appendChild(cnt);
+      card.appendChild(head);
+
+      card.appendChild(el("div","practice","<em>Daily practice —</em> "+w.practice));
+
+      var days = el("div","days");
+      for(var d=1; d<=7; d++){
+        var id = "w"+w.n+"d"+d;
+        var wrap = el("div","day");
+        var lab = document.createElement("label");
+        var cb = document.createElement("input");
+        cb.type = "checkbox"; cb.id = id; cb.checked = key(id);
+        cb.setAttribute("data-week", w.n);
+        var span = el("span",null,"Day "+d);
+        lab.appendChild(cb); lab.appendChild(span);
+        wrap.appendChild(lab); days.appendChild(wrap);
+      }
+      card.appendChild(days);
+
+      var deliv = el("div","deliverable");
+      deliv.appendChild(el("div","lbl","Weekly deliverable"));
+      deliv.appendChild(el("p",null,w.deliverable));
+      var dlab = document.createElement("label");
+      var dcb = document.createElement("input");
+      dcb.type="checkbox"; dcb.id="w"+w.n+"deliv"; dcb.checked=key("w"+w.n+"deliv");
+      dcb.setAttribute("data-deliv", w.n);
+      dlab.appendChild(dcb);
+      dlab.appendChild(document.createTextNode(" Deliverable complete"));
+      deliv.appendChild(dlab);
+      card.appendChild(deliv);
+
+      var notes = el("div","notes");
+      var nlab = document.createElement("label");
+      nlab.setAttribute("for","w"+w.n+"notes");
+      nlab.textContent = "Notes / reflection";
+      var ta = document.createElement("textarea");
+      ta.id = "w"+w.n+"notes";
+      ta.placeholder = "What surprised you? What was hard?";
+      ta.value = (state[ta.id] || "");
+      notes.appendChild(nlab); notes.appendChild(ta);
+      card.appendChild(notes);
+
+      root.appendChild(card);
+    });
+  }
+
+  function refresh(){
+    var totalDays = 0, totalDeliv = 0, fullWeeks = 0;
+    WEEKS.forEach(function(w){
+      var c = 0;
+      for(var d=1; d<=7; d++){ if(key("w"+w.n+"d"+d)){ c++; } }
+      totalDays += c;
+      var dv = key("w"+w.n+"deliv");
+      if(dv){ totalDeliv++; }
+      document.getElementById("cnt"+w.n).textContent = c+" / 7 days";
+      var card = document.getElementById("week"+w.n);
+      var complete = (c===7 && dv);
+      if(complete){ fullWeeks++; }
+      card.classList.toggle("done", complete);
+    });
+    var pct = Math.round((totalDays/56)*100);
+    document.getElementById("overallPct").textContent = pct+"%";
+    document.getElementById("overallBar").style.width = pct+"%";
+    document.getElementById("daysStat").textContent = totalDays+" / 56";
+    document.getElementById("delivStat").textContent = totalDeliv+" / 8";
+    document.getElementById("weeksStat").textContent = fullWeeks+" / 8";
+  }
+
+  document.addEventListener("change", function(ev){
+    var t = ev.target;
+    if(t && t.type === "checkbox"){
+      state[t.id] = t.checked;
+      save(); refresh();
+    }
+  });
+  document.addEventListener("input", function(ev){
+    var t = ev.target;
+    if(t && t.tagName === "TEXTAREA"){
+      state[t.id] = t.value;
+      save();
+    }
+  });
+
+  document.getElementById("exportBtn").addEventListener("click", function(){
+    window.print();
+  });
+  document.getElementById("resetBtn").addEventListener("click", function(){
+    if(window.confirm("Reset all progress and notes? This cannot be undone.")){
+      state = {};
+      try{ localStorage.removeItem(STORAGE_KEY); }catch(e){}
+      document.querySelectorAll("input[type=checkbox]").forEach(function(c){ c.checked=false; });
+      document.querySelectorAll("textarea").forEach(function(t){ t.value=""; });
+      refresh();
+    }
+  });
+
+  build();
+  refresh();
+})();
+</script>
+</body>
+</html>
